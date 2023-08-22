@@ -137,7 +137,7 @@ const showTrucks = (req, res) =>{
     const query = 
     `SELECT skateID, skateboard, quantity, amount, category, prodUrl
      FROM skateboards
-     WHERE category = trucks`
+     WHERE category = 'trucks'`
 
      db.query(query, (err, results) =>{
         if(err) throw err
