@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img src="../assets/images/christophe-meyer-ffvA4qpRjHY-unsplash.jpg" class="w-100 h-100" alt="">
+        <img src="https://i.postimg.cc/rpBBt6rc/christophe-meyer-ffv-A4qp-Rj-HY-unsplash.jpg" class="w-100 h-100" alt="">
     </div>
 </template>
 
