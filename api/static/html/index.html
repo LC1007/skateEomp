@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="d-flex justify-content-between p-5 w-100 bg-dark">
+      <h1 class="text-white">SkateHub</h1>
+      <ul class="list-unstyled">
+        <li>
+          <a href="#" class="text-decoration-none text-white">View Website</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="bg"></div>
+    <div class="container">
+        <h1 class="my-5">Routes</h1>
+        <h4 class="display-6">Routes for users</h4>
+        <table class="table">
+            <tr>
+                <th>http Method</th>
+                <th>Route</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>/users</td>
+                <td>Get all users</td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>/user/:userID</td>
+                <td>Get single users</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>/user</td>
+                <td>Add a user</td>
+            </tr>
+            <tr>
+                <td>PATCH/PUT</td>
+                <td>/user/:userID</td>
+                <td>Update a user record</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>/user/:userID</td>
+                <td>Delete a user</td>
+            </tr>
+        </table>
+        <h4 class="display-6">Routes for products</h4>
+        <table class="table">
+            <tr>
+                <th>http Method</th>
+                <th>Route</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>/users</td>
+                <td>Get all products</td>
+            </tr>
+            <tr>
+                <td>GET</td>
+                <td>/product/:productID</td>
+                <td>Get single product</td>
+            </tr>
+            <tr>
+                <td>POST</td>
+                <td>/product</td>
+                <td>Add a product</td>
+            </tr>
+            <tr>
+                <td>PATCH/PUT</td>
+                <td>/product/:productID</td>
+                <td>Update a product record</td>
+            </tr>
+            <tr>
+                <td>DELETE</td>
+                <td>/product/:productID</td>
+                <td>Delete a product</td>
+            </tr>
+        </table>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
