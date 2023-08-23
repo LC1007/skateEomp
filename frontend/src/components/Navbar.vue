@@ -1,11 +1,10 @@
 <template>
- 
-  <div>
-    <div class="container position-fixed d-flex justify-content-evenly">
+  
+  <div class="position-relative container d-flex justify-content-evenly">
+      <!-- <img src="https://i.postimg.cc/rpBBt6rc/christophe-meyer-ffv-A4qp-Rj-HY-unsplash.jpg" class="img w-100"> -->
       <!-- <img src="../assets/images/Screenshot_2023-08-19_121219-removebg-preview.png" alt="" class="logo me-auto"> -->
-      <h1 class="side-text">SKATE<span>HUB</span></h1>
-      <nav class="m-5 navbar nav-sticky">
-        
+      <nav class="mt-1 ps-3 navbar position-fixed bg-black" style="z-index: 9999">
+        <h1>SKATE<span>HUB</span></h1>
         <ul>
           <li class="nav-item">
             <router-link class="text" to="/">Home</router-link>
@@ -24,8 +23,6 @@
           </li>
         </ul>
       </nav>
-    </div>
-    <img src="https://i.postimg.cc/rpBBt6rc/christophe-meyer-ffv-A4qp-Rj-HY-unsplash.jpg" class="img w-100">
   </div>
 </template>
 
@@ -37,9 +34,9 @@
 
 <style scoped>
     .text{
-      color: black;
+      color: white;
       text-decoration: none;
-      
+      font-family: 'M PLUS 1', sans-serif;
     }
     .logo{
       width: 16rem;
@@ -48,9 +45,8 @@
     h1{
       color: white;
       font-size: 3rem;
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
     }
 
-    .nav-sticky{
-      
-    }
 </style>

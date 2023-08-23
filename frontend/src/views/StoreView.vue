@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <div class="div bg-dark">
+    <img src="https://i.postimg.cc/rpBBt6rc/christophe-meyer-ffv-A4qp-Rj-HY-unsplash.jpg" class="img w-100">
+
+    <div class="div-store bg-dark">
       <h1 class="text-center text-white text-uppercase mb-5">Products</h1>
       <div>
         <div class="container">
@@ -9,13 +11,14 @@
             <li class="card" v-for="item in skateboards" :key="item.skateID">
               <div>
                 <h3 class="card-title text-white">{{ item.skateboard }}</h3>
-                <img :src=item.prodUrl class="w-100 test" alt="">
+                <img :src="item.prodUrl" class="w-100 test" alt="">
                 <div class="card-content">
                   <p class="text-white">{{ item.category }}</p>
                 </div>
               </div>
               <div class="card-link-wrapper">
-                <a href="" class="btn btn-danger">Buy Now</a>
+                <a href="" class="btn  btn-outline-light me-2">Buy Now</a>
+                <router-link :to="{ name: 'byProduct', params: {id: item.skateID}, query: {skateboard: item.skateboard, img: item.prodUrl}}"><button class="btn  btn-outline-light ">View More</button></router-link>
               </div>
             </li>
           </ul>
@@ -31,8 +34,9 @@
                   <p class="text-white">{{ item.category }}</p>
                 </div>
               </div>
-              <div class="card-link-wrapper">
-                <a href="" class="btn btn-danger">Learn More</a>
+               <div class="card-link-wrapper">
+                <a href="" class="btn  btn-outline-light me-2">Buy Now</a>
+                <router-link :to="{ name: 'byProduct', params: {id: item.skateID}, query: {skateboard: item.skateboard, img: item.prodUrl}}"><button class="btn  btn-outline-light ">View More</button></router-link>
               </div>
             </li>
           </ul>
@@ -56,10 +60,19 @@ export default {
     this.$store.dispatch("fetchBoards");
     this.$store.dispatch("fetchTrucks");
   },
+  methods:{
+      goToProduct(){
+        this.$router.push({
+          name: this.name,
+          params: this.params.id,
+          query: this.query.name
+        })
+      }
+    }
 };
 </script>
 
-<style>
+<style scoped>
 .div {
   padding: 4rem;
   margin-inline: 1rem;
@@ -91,4 +104,9 @@ export default {
   aspect-ratio: 1 / 1;
   object-fit: cover;
 }
+
+.card{
+  background-color: rgb(79, 79, 79);
+}
 </style>
+

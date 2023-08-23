@@ -1,15 +1,17 @@
 <template>
   <div class="home">
-    <div class="div">
-      <h1 class="text-center text-uppercase mb-5">Featured Products</h1>
+    <img src="https://i.postimg.cc/rpBBt6rc/christophe-meyer-ffv-A4qp-Rj-HY-unsplash.jpg" class="img w-100">
+    <div class="div bg-dark">
+      <h1 class="text-center text-white text-uppercase mb-5">Featured Products</h1>
       <div class="container">
-        <div class="row">
+        <div class="row g-2">
           <div class="col" v-for="item in skateboards" :key="item.skateID">
               <div class="card" style="width: 15rem;">
                 <img :src="item.prodUrl" class="card-top-img custom-img" alt="">
                 <div class="card-body">
-                  <div class="card-title">{{ item.skateboard }}</div>
-                  <div class="card-text">{{ item.quantity }}</div>
+                  <div class="card-title text-white">{{ item.skateboard }}</div>
+                  <div class="card-text text-white">{{ item.quantity }}</div>
+                  <router-link :to="{ name: 'byProduct', params: {id: item.skateID}, query: {skateboard: item.skateboard, img: item.prodUrl}}"><button class="btn  btn-outline-light ">View More</button></router-link>
                 </div>
               </div>
           </div>
@@ -28,19 +30,24 @@ export default {
     },
     mounted(){
       this.$store.dispatch('fetchBoards')
+    },
+    methods:{
+      goToProduct(){
+        this.$router.push({
+          name: this.name,
+          params: this.params.id,
+          query: this.query.name
+        })
+      }
     }
   }
 </script>
 
 
-<style>
+<style scoped>
+
 .div{
-  background-color: white;
-  padding: 4rem;
-  margin-inline: 10rem;
-  border-radius: 10px;
-  position: relative;
-  bottom: 5rem;
+  margin-inline: 10%;
 }
 
 .custom-img{
@@ -51,4 +58,9 @@ export default {
 .custom-img:hover{
   object-fit: contain;
 }
+
+.card{
+  background-color: rgb(64, 63, 63);
+}
+
 </style>

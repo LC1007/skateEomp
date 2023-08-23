@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;600&display=swap');
-
-
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mohave:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@200&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -28,9 +28,10 @@ nav{
   background: #ffffffa5;
   border-radius: 50px;
   box-shadow: 0 25px 20px -20px rgba(0, 0, 0, 0.4);
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
+  position: -webkit-sticky;
+  position: fixed;
   top: 0;
+  
 }
 nav ul .nav-item{
   list-style: none;
@@ -39,7 +40,7 @@ nav ul .nav-item{
   margin: 10px;
   font-size: 18px;
   font-weight: 500;
-  color: #777;
+  color: #d6d6d6;
   cursor: pointer;
   position: relative;
   z-index: 2;
@@ -53,7 +54,7 @@ nav ul .nav-item{
 }
 nav ul .nav-item::after{
   content: '';
-  background: #47474788;
+  background: #a1a1a188;
   width: 100%;
   height: 100%;
   border-radius: 30px;
@@ -119,10 +120,10 @@ h2 {
   margin-right: 10px;
 }
 
-.card:hover {
+/* .card:hover {
   color: var(--white);
   background: var(--red);
-}
+} */
 
 .card .card-title {
   font-size: 20px;
@@ -153,15 +154,18 @@ h2 {
 
 .cards::-webkit-scrollbar {
   height: 12px;
+  background-color: rgba(255, 255, 255, 0.269);
 }
 
 .cards::-webkit-scrollbar-thumb,
 .cards::-webkit-scrollbar-track {
   border-radius: 92px;
+  background-color: white;
 }
 
 .cards::-webkit-scrollbar-thumb {
   background: var(--darkred);
+  background-color: white;
 }
 
 .cards::-webkit-scrollbar-track {
