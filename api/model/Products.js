@@ -94,7 +94,7 @@ fetchProducts(req, res){
     const query = 
     `SELECT skateID, skateboard, quantity, amount, category, prodUrl
      FROM skateboards
-     LIMT 5`
+     LIMIT 5`
 
      db.query(query, (err, results) =>{
       if(err){
