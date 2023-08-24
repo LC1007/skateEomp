@@ -86,6 +86,20 @@ fetchProducts(req, res){
       }
     });
   };
+
+  // Delete Product
+  deleteProduct(req, res){
+    const query = `DELETE FROM skateboards WHERE skateID = ?`
+    const { skateID } = req.params
+
+    db.query(query, [skateID], (err) =>{
+      if(err) throw err
+      res.json({
+        status: res.statusCode,
+        msg: "Product has been deleted"
+      })
+    })
+  }
   
   // Sort functions
   

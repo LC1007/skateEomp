@@ -21,6 +21,10 @@ router.patch('/product/:skateID', bodyParser.json(), (req, res) =>{
     products.updateProduct(req, res)
 })
 
+router.delete('/product/:skateID', (req, res) =>{
+    products.deleteProduct(req, res)
+})
+
 // ==================== USERS ====================== //
 
 router.get('/users', (req, res) =>{
