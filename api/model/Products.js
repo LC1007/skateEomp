@@ -89,6 +89,28 @@ fetchProducts(req, res){
   
   // Sort functions
   
+  // Feature products
+  featureProds(req, res){
+    const query = 
+    `SELECT skateID, skateboard, quantity, amount, category, prodUrl
+     FROM skateboards
+     LIMT 5`
+
+     db.query(query, (err, results) =>{
+      if(err){
+        res.json({
+          msg: "Something went wrong",
+          err: err.message
+        })
+      } else{
+        res.json({
+          status: res.statusCode,
+          results
+        })
+      }
+     })
+  }
+
   // Sort by product name
   sortProd(req, res){
     const query = `SELECT skateID, skateboard, quantity, amount, category, prodUrl
