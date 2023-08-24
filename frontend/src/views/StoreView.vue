@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <img src="https://i.postimg.cc/rpBBt6rc/christophe-meyer-ffv-A4qp-Rj-HY-unsplash.jpg" class="img w-100">
+    <img src="https://i.postimg.cc/xCWBmDbY/christophe-meyer-ffv-A4qp-Rj-HY-unsplash.jpg" class="img w-100">
 
     <div class="div-store bg-dark">
       <h1 class="text-center text-white text-uppercase mb-5">Products</h1>
@@ -10,7 +10,7 @@
           <ul class="cards">
             <li class="card" v-for="item in skateboards" :key="item.skateID">
               <div>
-                <h3 class="card-title text-white">{{ item.skateboard }}</h3>
+                <p class="text-white">{{ item.skateboard }}</p>
                 <img :src="item.prodUrl" class="w-100 test" alt="">
                 <div class="card-content">
                   <p class="text-white">{{ item.category }}</p>

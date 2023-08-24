@@ -1,12 +1,12 @@
 <template>
   <div class="home">
-    <img src="https://i.postimg.cc/rpBBt6rc/christophe-meyer-ffv-A4qp-Rj-HY-unsplash.jpg" class="img w-100">
-    <div class="div bg-dark">
-      <h1 class="text-center text-white text-uppercase mb-5">Featured Products</h1>
-      <div class="container">
-        <div class="row g-2">
-          <div class="col" v-for="item in skateboards" :key="item.skateID">
-              <div class="card" style="width: 15rem;">
+    <img src="https://i.postimg.cc/xCWBmDbY/christophe-meyer-ffv-A4qp-Rj-HY-unsplash.jpg" class="img w-100">
+    <div class="container">
+        <div class="div bg-dark">
+    <h1 class="text-center text-white text-uppercase mb-5">Featured Products</h1>
+        <div class="row g-5 m-2">
+          <div class="col col-lg-4 col-md-6" v-for="item in featuredProds" :key="item.skateID">
+              <div class="card h-100 w-100" style="width: 15rem;">
                 <img :src="item.prodUrl" class="card-top-img custom-img" alt="">
                 <div class="card-body">
                   <div class="card-title text-white">{{ item.skateboard }}</div>
@@ -24,12 +24,12 @@
 <script>
 export default {
     computed:{
-      skateboards(){
-        return this.$store.state.skateboards
+      featuredProds(){
+        return this.$store.state.featuredProds
       }
     },
     mounted(){
-      this.$store.dispatch('fetchBoards')
+      this.$store.dispatch('fetchFeatured')
     },
     methods:{
       goToProduct(){
@@ -46,8 +46,13 @@ export default {
 
 <style scoped>
 
+
 .div{
-  margin-inline: 10%;
+  border-top-right-radius: 50px;
+  border-top-left-radius: 50px;
+  padding-top: 1.5rem;
+  position: relative;
+  bottom: 4rem;
 }
 
 .custom-img{

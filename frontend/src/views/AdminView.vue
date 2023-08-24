@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img src="https://i.postimg.cc/rpBBt6rc/christophe-meyer-ffv-A4qp-Rj-HY-unsplash.jpg" class="img w-100">
+        <img src="https://i.postimg.cc/xCWBmDbY/christophe-meyer-ffv-A4qp-Rj-HY-unsplash.jpg" class="img w-100">
         <div class="container">
             <h1 class="text text-white">Product Table</h1>
             <button class="btn btn-outline-light my-5">Add Product</button>
@@ -26,9 +26,8 @@
                         <td ><img :src="item.prodUrl" style="width: 10rem" alt=""></td>
                         <td >
                             <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    <button class="btn btn-outline-light  mx-1">Edit</button>
-  </button>
+                            <button class="btn btn-outline-light  mx-1">Edit</button>
+                            
   
   <!-- Modal -->
   <div class="modal fade" style="margin-top: 5rem;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

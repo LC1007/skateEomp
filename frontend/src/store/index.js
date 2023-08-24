@@ -7,7 +7,8 @@ const url = 'https://skatehub.onrender.com/'
 export default createStore({
   state: {
     skateboards: null,
-    trucks: null
+    trucks: null,
+    featuredProds: null
   },
   getters: {
   },
@@ -17,6 +18,9 @@ export default createStore({
     },
     setTrucks(state, data){
       state.trucks = data
+    },
+    setFeature(state, data){
+      state.featuredProds = data
     }
   },
   actions: {
@@ -27,6 +31,10 @@ export default createStore({
     async fetchTrucks({commit}){
       const fetchedTruck = await axios.get(`${url}trucks`)
       commit('setTrucks', fetchedTruck.data.results)
+    },
+    async fetchFeatured({commit}){
+      const fetchedFeatures = await axios.get(`${url}featured`)
+      commit('setFeature', fetchedFeatures.data.results)
     }
   },
   modules: {
