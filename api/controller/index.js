@@ -45,6 +45,14 @@ router.get('/trucks', (req, res) =>{
     products.showTrucks(req, res)
 })
 
+router.get('/category/:category', (req, res)=>{
+    products.probCategory(req, res)
+})
+
+router.get('/featured', (req, res) =>{
+    products.featureProds(req, res)
+})
+
 module.exports = {
     express,
     router
