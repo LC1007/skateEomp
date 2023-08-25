@@ -1,11 +1,14 @@
 <template>
   <div class="home">
     <img src="https://i.postimg.cc/xCWBmDbY/christophe-meyer-ffv-A4qp-Rj-HY-unsplash.jpg" class="img w-100">
-
-    <div class="div-store bg-dark">
-      <h1 class="text-center text-white text-uppercase mb-5">Products</h1>
+    <div class="heading">
+      <h1 class="heading-text text-white">Product Page</h1>
+    </div>
+    <div class="div-store">
+      <h1 class="side-text">SKATE<span>HUB</span></h1>
       <div>
         <div class="container">
+          <h1 class="text-center text-white text-uppercase mb-5 pt-5">Products</h1>
           <h2 class="text-white">skateboards</h2>
           <ul class="cards">
             <li class="card" v-for="item in skateboards" :key="item.skateID">
@@ -18,7 +21,7 @@
               </div>
               <div class="card-link-wrapper">
                 <a href="" class="btn  btn-outline-light me-2">Buy Now</a>
-                <router-link :to="{ name: 'byProduct', params: {id: item.skateID}, query: {skateboard: item.skateboard, img: item.prodUrl}}"><button class="btn  btn-outline-light ">View More</button></router-link>
+                <button class="btn  btn-outline-light ">View More</button>
               </div>
             </li>
           </ul>
@@ -34,9 +37,9 @@
                   <p class="text-white">{{ item.category }}</p>
                 </div>
               </div>
-               <div class="card-link-wrapper">
+              <div class="card-link-wrapper">
                 <a href="" class="btn  btn-outline-light me-2">Buy Now</a>
-                <router-link :to="{ name: 'byProduct', params: {id: item.skateID}, query: {skateboard: item.skateboard, img: item.prodUrl}}"><button class="btn  btn-outline-light ">View More</button></router-link>
+                <button class="btn  btn-outline-light ">View More</button>
               </div>
             </li>
           </ul>
@@ -47,6 +50,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 export default {
   computed: {
     skateboards() {
@@ -61,24 +65,29 @@ export default {
     this.$store.dispatch("fetchTrucks");
   },
   methods:{
-      goToProduct(){
-        this.$router.push({
-          name: this.name,
-          params: this.params.id,
-          query: this.query.name
-        })
-      }
+      
     }
 };
 </script>
 
 <style scoped>
-.div {
+.div-store {
   padding: 4rem;
   margin-inline: 1rem;
-  border-radius: 10px;
   position: relative;
-  bottom: 5rem;
+  bottom: 9rem;
+}
+
+.text-center{
+  border-top-left-radius: 50px;
+
+}
+
+.container{
+  background-color: rgb(25, 25, 25);
+  position: relative;
+  padding-left: 10rem;
+  bottom: 4rem;
 }
 
 .custom-img {
@@ -94,10 +103,11 @@ export default {
   font-size: 7rem;
   color: white;
   transform: rotate(-90deg);
-  position: relative;
-  right: 40rem;
-  bottom: 5rem;
+  position: fixed;
+  right: 73rem;
+  bottom: 15rem;
   font-weight: 200;
+  z-index: 2;
 }
 
 .test {
@@ -108,5 +118,23 @@ export default {
 .card{
   background-color: rgb(79, 79, 79);
 }
+
+.heading{
+  border-radius: 20px;
+  background-color: rgba(24, 24, 24, 0.58);
+  position: relative;
+  z-index: 1;
+  bottom: 32rem;
+  left: 27rem;
+  padding-inline: 2rem;
+  padding-block: 2rem;
+  margin-right: 51rem;
+
+}
+
+.heading-text{
+  font-size: 7rem;
+}
+
 </style>
 
