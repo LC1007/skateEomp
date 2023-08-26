@@ -78,6 +78,7 @@ fetchProducts(req, res){
         res.json({
           status: res.statusCode,
           msg: `Something went wrong trying to update product. skateID: ${data.skateID}`,
+          err: err.message
         });
       } else {
         res.json({
