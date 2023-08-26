@@ -32,7 +32,7 @@ fetchProducts(req, res){
       if (err) {
         res.json({
           status: res.statusCode,
-          err: err,
+          err: err.message,
           msg: "Something went wrong trying to fetch a product",
         });
       } else {
